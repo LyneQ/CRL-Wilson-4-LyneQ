@@ -170,8 +170,6 @@ async function Exo10(URL, Attempts = 0) {
   }
 }
 
-Exo10("https://api.agify.io/?name=luc").then(console.log).catch(console.error);
-
 /**
  * execute all exos
  */
@@ -184,3 +182,5 @@ Exo10("https://api.agify.io/?name=luc").then(console.log).catch(console.error);
 // Exo7();
 // Exo8();
 // Exo9();
+// change the URL to test the the exponential backoff
+Exo10("https://api.agify.io/?name=luc").then(console.log).catch(console.error);
