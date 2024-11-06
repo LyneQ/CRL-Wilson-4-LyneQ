@@ -15,17 +15,22 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #1a1a1a;
 }
 
 /* Utility Classes */
 .container {
   width: 100%;
-  max-width: 67vw;
+  max-width: 75vw;
   margin: 0 auto;
 }
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 950px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -44,7 +49,7 @@ header {
   margin: 0 auto;
   padding: 4rem 0;
 }
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 950px) {
   header {
     flex-direction: row !important;
     justify-content: space-between;
@@ -52,7 +57,7 @@ header {
     padding: 2rem 0;
   }
 }
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 950px) {
   header img {
     width: 3rem;
   }
@@ -60,7 +65,7 @@ header {
 header .burger {
   display: none;
 }
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 950px) {
   header .burger {
     display: block;
   }
@@ -71,7 +76,7 @@ header ul {
   align-items: center;
   list-style: none;
 }
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 950px) {
   header ul {
     display: none;
   }
@@ -88,46 +93,24 @@ header ul a {
 main {
   margin: 0 auto;
   display: flex;
-  gap: 1.3rem;
+  gap: 1.5rem;
 }
 main .top-news {
   display: grid;
-  column-gap: 1rem;
+  column-gap: 1.5rem;
   max-width: 730px;
   height: fit-content;
 }
-@media screen and (max-width: 1110px) {
-  main .top-news {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
-main .top-news h1 {
-  font-weight: 800;
-  font-size: 3rem;
-  line-height: 1;
-}
-@media screen and (max-width: 1110px) {
-  main .top-news h1 {
-    font-size: 2rem;
-  }
-}
-main .top-news img {
-  width: 100%;
-  max-width: 730px;
-  height: 300px;
-  object-fit: cover;
-  object-position: top;
-}
 main .top-news div:first-child {
   grid-column: span 2;
-  margin: 0 1rem 1rem;
 }
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 950px) {
   main .top-news div:first-child {
     margin: 0;
   }
+}
+main .top-news div {
+  margin: 0.75rem;
 }
 main .top-news div:last-child {
   display: flex;
@@ -143,10 +126,35 @@ main .top-news div:last-child button {
   font-weight: 700;
   width: fit-content;
 }
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 950px) {
   main .top-news div:last-child button {
     margin-top: 1rem;
   }
+}
+@media screen and (max-width: 950px) {
+  main .top-news {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+main .top-news h1 {
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1;
+}
+@media screen and (max-width: 950px) {
+  main .top-news h1 {
+    font-size: 2rem;
+  }
+}
+main .top-news img {
+  width: 100%;
+  max-width: 730px;
+  height: 300px;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: 1.5rem;
 }
 main .news {
   background-color: black;
@@ -177,78 +185,42 @@ main .news ul h4 {
 
 /* Leaderboard */
 .leaderboard {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 4rem auto;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 1210px) {
   .leaderboard {
-    flex-direction: column;
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 .leaderboard .card {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  overflow: hidden;
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  width: fit-content;
 }
-@media screen and (max-width: 1110px) {
-  .leaderboard .card {
-    max-width: 100%;
-  }
+.leaderboard .card .card-image {
+  width: fit-content;
 }
-.leaderboard .card div {
-  display: flex;
-  overflow: hidden;
-}
-@media screen and (max-width: 1110px) {
-  .leaderboard .card div {
-    width: 30vw;
-    height: 30vw;
-  }
-}
-.leaderboard .card div img {
-  width: 100%;
-  height: 100%;
-  max-width: 10rem;
-  max-height: 10rem;
+.leaderboard .card .card-image img {
+  width: 100px;
+  height: 128px;
   object-fit: cover;
-  object-position: center;
 }
 .leaderboard .card .content {
-  display: flex;
-  flex-direction: column;
-  height: 20vw;
-}
-@media screen and (max-width: 1110px) {
-  .leaderboard .card .content {
-    height: 30vw;
-  }
-}
-.leaderboard .card .content h1 {
-  color: grey;
-}
-.leaderboard .card .content h2 {
-  color: black;
-}
-.leaderboard .card .content a {
-  font-size: 75%;
-}
-@media screen and (max-width: 1110px) {
-  .leaderboard .card .content {
-    font-size: 1rem;
-  }
+  width: fit-content;
+  font-size: 0.8rem;
 }
 @media screen and (max-width: 550px) {
   .leaderboard .card .content {
-    font-size: smaller;
+    font-size: 0.8rem;
   }
+}
+.leaderboard .card .content h1 {
+  color: #c5c6ce;
 }
 
 /*# sourceMappingURL=main.css.map */
