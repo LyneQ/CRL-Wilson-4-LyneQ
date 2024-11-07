@@ -3,8 +3,8 @@ $font-color: #686a82;
 
 $breakpoints: (
   large: 1200px,
-  medium: 950px,
-  small: 550px,
+  medium: 900px,
+  small: 600px,
 );
 
 @mixin md-screen {

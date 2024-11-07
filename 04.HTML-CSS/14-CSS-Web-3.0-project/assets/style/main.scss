@@ -109,6 +109,7 @@ main {
 
     div:first-child {
       grid-column: span 2;
+      margin-top: 0;
 
       @include variable.md-screen {
         margin: 0;
@@ -132,6 +133,8 @@ main {
         letter-spacing: 0.2rem;
         font-weight: 700;
         width: fit-content;
+        cursor: pointer;
+        margin-top: 0.75rem;
 
         @include variable.md-screen {
           margin-top: 1rem;
@@ -161,7 +164,6 @@ main {
       height: 300px;
       object-fit: cover;
       object-position: top;
-      margin-bottom: 1.5rem;
     }
   }
 
@@ -209,8 +211,12 @@ main {
   margin-top: 3rem;
   margin-bottom: 3rem;
 
-  @media screen and (max-width: 1210px) {
+  @include variable.md-screen {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include variable.sm-screen {
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .card {
